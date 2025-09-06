@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق التوزيع الإلكتروني</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>تطبيق التوزيع الإلكتروني</h1>
+        <p>اختر عنصراً من الجدول الدوري أو أدخل العدد الذري يدوياً.</p>
+        
+        <input type="number" id="atomicNumberInput" placeholder="أدخل العدد الذري" min="1">
+        <button onclick="distributeFromInput()">توزيع</button>
+        
+        <div id="periodic-table-container">
+            <h2>الجدول الدوري</h2>
+            <div id="periodic-table">
+                <div class="element nonmetal" data-atomic-number="1" data-symbol="H"><span>1</span><h3>H</h3><p>هيدروجين</p></div>
+                <div class="empty empty-span-16"></div> <div class="element noble-gas" data-atomic-number="2" data-symbol="He"><span>2</span><h3>He</h3><p>هيليوم</p></div>
+                
+                <div class="element alkali-metal" data-atomic-number="3" data-symbol="Li"><span>3</span><h3>Li</h3><p>ليثيوم</p></div>
+                <div class="element alkaline-earth-metal" data-atomic-number="4" data-symbol="Be"><span>4</span><h3>Be</h3><p>بيريليوم</p></div>
+                <div class="empty empty-span-10"></div> <div class="element metalloid" data-atomic-number="5" data-symbol="B"><span>5</span><h3>B</h3><p>بورون</p></div>
+                <div class="element nonmetal" data-atomic-number="6" data-symbol="C"><span>6</span><h3>C</h3><p>كربون</p></div>
+                <div class="element nonmetal" data-atomic-number="7" data-symbol="N"><span>7</span><h3>N</h3><p>نيتروجين</p></div>
+                <div class="element nonmetal" data-atomic-number="8" data-symbol="O"><span>8</span><h3>O</h3><p>أكسجين</p></div>
+                <div class="element halogen" data-atomic-number="9" data-symbol="F"><span>9</span><h3>F</h3><p>فلور</p></div>
+                <div class="element noble-gas" data-atomic-number="10" data-symbol="Ne"><span>10</span><h3>Ne</h3><p>نيون</p></div>
+                
+                <div class="element alkali-metal" data-atomic-number="11" data-symbol="Na"><span>11</span><h3>Na</h3><p>صوديوم</p></div>
+                <div class="element alkaline-earth-metal" data-atomic-number="12" data-symbol="Mg"><span>12</span><h3>Mg</h3><p>مغنيسيوم</p></div>
+                <div class="empty empty-span-10"></div>
+                <div class="element post-transition-metal" data-atomic-number="13" data-symbol="Al"><span>13</span><h3>Al</h3><p>ألومنيوم</p></div>
+                <div class="element metalloid" data-atomic-number="14" data-symbol="Si"><span>14</span><h3>Si</h3><p>سيليكون</p></div>
+                <div class="element nonmetal" data-atomic-number="15" data-symbol="P"><span>15</span><h3>P</h3><p>فسفور</p></div>
+                <div class="element nonmetal" data-atomic-number="16" data-symbol="S"><span>16</span><h3>S</h3><p>كبريت</p></div>
+                <div class="element halogen" data-atomic-number="17" data-symbol="Cl"><span>17</span><h3>Cl</h3><p>كلور</p></div>
+                <div class="element noble-gas" data-atomic-number="18" data-symbol="Ar"><span>18</span><h3>Ar</h3><p>أرغون</p></div>
+
+                <div class="element alkali-metal" data-atomic-number="19" data-symbol="K"><span>19</span><h3>K</h3><p>بوتاسيوم</p></div>
+                <div class="element alkaline-earth-metal" data-atomic-number="20" data-symbol="Ca"><span>20</span><h3>Ca</h3><p>كالسيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="21" data-symbol="Sc"><span>21</span><h3>Sc</h3><p>سكانديوم</p></div>
+                <div class="element transition-metal" data-atomic-number="22" data-symbol="Ti"><span>22</span><h3>Ti</h3><p>تيتانيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="23" data-symbol="V"><span>23</span><h3>V</h3><p>فاناديوم</p></div>
+                <div class="element transition-metal" data-atomic-number="24" data-symbol="Cr"><span>24</span><h3>Cr</h3><p>كروم</p></div>
+                <div class="element transition-metal" data-atomic-number="25" data-symbol="Mn"><span>25</span><h3>Mn</h3><p>منجنيز</p></div>
+                <div class="element transition-metal" data-atomic-number="26" data-symbol="Fe"><span>26</span><h3>Fe</h3><p>حديد</p></div>
+                <div class="element transition-metal" data-atomic-number="27" data-symbol="Co"><span>27</span><h3>Co</h3><p>كوبالت</p></div>
+                <div class="element transition-metal" data-atomic-number="28" data-symbol="Ni"><span>28</span><h3>Ni</h3><p>نيكل</p></div>
+                <div class="element transition-metal" data-atomic-number="29" data-symbol="Cu"><span>29</span><h3>Cu</h3><p>نحاس</p></div>
+                <div class="element transition-metal" data-atomic-number="30" data-symbol="Zn"><span>30</span><h3>Zn</h3><p>زنك</p></div>
+                <div class="element post-transition-metal" data-atomic-number="31" data-symbol="Ga"><span>31</span><h3>Ga</h3><p>جاليوم</p></div>
+                <div class="element metalloid" data-atomic-number="32" data-symbol="Ge"><span>32</span><h3>Ge</h3><p>جرمانيوم</p></div>
+                <div class="element metalloid" data-atomic-number="33" data-symbol="As"><span>33</span><h3>As</h3><p>زرنيخ</p></div>
+                <div class="element nonmetal" data-atomic-number="34" data-symbol="Se"><span>34</span><h3>Se</h3><p>سيلينيوم</p></div>
+                <div class="element halogen" data-atomic-number="35" data-symbol="Br"><span>35</span><h3>Br</h3><p>بروم</p></div>
+                <div class="element noble-gas" data-atomic-number="36" data-symbol="Kr"><span>36</span><h3>Kr</h3><p>كريبتون</p></div>
+
+                <div class="element alkali-metal" data-atomic-number="37" data-symbol="Rb"><span>37</span><h3>Rb</h3><p>روبيديوم</p></div>
+                <div class="element alkaline-earth-metal" data-atomic-number="38" data-symbol="Sr"><span>38</span><h3>Sr</h3><p>سترونشيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="39" data-symbol="Y"><span>39</span><h3>Y</h3><p>إيتريوم</p></div>
+                <div class="element transition-metal" data-atomic-number="40" data-symbol="Zr"><span>40</span><h3>Zr</h3><p>زركونيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="41" data-symbol="Nb"><span>41</span><h3>Nb</h3><p>نيوبيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="42" data-symbol="Mo"><span>42</span><h3>Mo</h3><p>موليبدينوم</p></div>
+                <div class="element transition-metal" data-atomic-number="43" data-symbol="Tc"><span>43</span><h3>Tc</h3><p>تكنيشيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="44" data-symbol="Ru"><span>44</span><h3>Ru</h3><p>روثينيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="45" data-symbol="Rh"><span>45</span><h3>Rh</h3><p>روديوم</p></div>
+                <div class="element transition-metal" data-atomic-number="46" data-symbol="Pd"><span>46</span><h3>Pd</h3><p>بالاديوم</p></div>
+                <div class="element transition-metal" data-atomic-number="47" data-symbol="Ag"><span>47</span><h3>Ag</h3><p>فضة</p></div>
+                <div class="element transition-metal" data-atomic-number="48" data-symbol="Cd"><span>48</span><h3>Cd</h3><p>كادميوم</p></div>
+                <div class="element post-transition-metal" data-atomic-number="49" data-symbol="In"><span>49</span><h3>In</h3><p>إنديوم</p></div>
+                <div class="element post-transition-metal" data-atomic-number="50" data-symbol="Sn"><span>50</span><h3>Sn</h3><p>قصدير</p></div>
+                <div class="element metalloid" data-atomic-number="51" data-symbol="Sb"><span>51</span><h3>Sb</h3><p>أنتيمون</p></div>
+                <div class="element metalloid" data-atomic-number="52" data-symbol="Te"><span>52</span><h3>Te</h3><p>تيلوريوم</p></div>
+                <div class="element halogen" data-atomic-number="53" data-symbol="I"><span>53</span><h3>I</h3><p>يود</p></div>
+                <div class="element noble-gas" data-atomic-number="54" data-symbol="Xe"><span>54</span><h3>Xe</h3><p>زينون</p></div>
+
+                <div class="element alkali-metal" data-atomic-number="55" data-symbol="Cs"><span>55</span><h3>Cs</h3><p>سيزيوم</p></div>
+                <div class="element alkaline-earth-metal" data-atomic-number="56" data-symbol="Ba"><span>56</span><h3>Ba</h3><p>باريوم</p></div>
+                <div class="element lanthanide" data-atomic-number="57-71"><span>57-71</span><h3>La-Lu</h3><p>لانتانيدات</p></div> <div class="element transition-metal" data-atomic-number="72" data-symbol="Hf"><span>72</span><h3>Hf</h3><p>هافنيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="73" data-symbol="Ta"><span>73</span><h3>Ta</h3><p>تانتالوم</p></div>
+                <div class="element transition-metal" data-atomic-number="74" data-symbol="W"><span>74</span><h3>W</h3><p>تنجستين</p></div>
+                <div class="element transition-metal" data-atomic-number="75" data-symbol="Re"><span>75</span><h3>Re</h3><p>رينيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="76" data-symbol="Os"><span>76</span><h3>Os</h3><p>أوزميوم</p></div>
+                <div class="element transition-metal" data-atomic-number="77" data-symbol="Ir"><span>77</span><h3>Ir</h3><p>إيريديوم</p></div>
+                <div class="element transition-metal" data-atomic-number="78" data-symbol="Pt"><span>78</span><h3>Pt</h3><p>بلاتين</p></div>
+                <div class="element transition-metal" data-atomic-number="79" data-symbol="Au"><span>79</span><h3>Au</h3><p>ذهب</p></div>
+                <div class="element transition-metal" data-atomic-number="80" data-symbol="Hg"><span>80</span><h3>Hg</h3><p>زئبق</p></div>
+                <div class="element post-transition-metal" data-atomic-number="81" data-symbol="Tl"><span>81</span><h3>Tl</h3><p>ثاليوم</p></div>
+                <div class="element post-transition-metal" data-atomic-number="82" data-symbol="Pb"><span>82</span><h3>Pb</h3><p>رصاص</p></div>
+                <div class="element post-transition-metal" data-atomic-number="83" data-symbol="Bi"><span>83</span><h3>Bi</h3><p>بزموث</p></div>
+                <div class="element post-transition-metal" data-atomic-number="84" data-symbol="Po"><span>84</span><h3>Po</h3><p>بولونيوم</p></div>
+                <div class="element halogen" data-atomic-number="85" data-symbol="At"><span>85</span><h3>At</h3><p>أستاتين</p></div>
+                <div class="element noble-gas" data-atomic-number="86" data-symbol="Rn"><span>86</span><h3>Rn</h3><p>رادون</p></div>
+                
+                <div class="element alkali-metal" data-atomic-number="87" data-symbol="Fr"><span>87</span><h3>Fr</h3><p>فرنسيوم</p></div>
+                <div class="element alkaline-earth-metal" data-atomic-number="88" data-symbol="Ra"><span>88</span><h3>Ra</h3><p>راديوم</p></div>
+                <div class="element actinide" data-atomic-number="89-103"><span>89-103</span><h3>Ac-Lr</h3><p>أكتينيدات</p></div> <div class="element transition-metal" data-atomic-number="104" data-symbol="Rf"><span>104</span><h3>Rf</h3><p>رذرفورديوم</p></div>
+                <div class="element transition-metal" data-atomic-number="105" data-symbol="Db"><span>105</span><h3>Db</h3><p>دوبنيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="106" data-symbol="Sg"><span>106</span><h3>Sg</h3><p>سيبرغوم</p></div>
+                <div class="element transition-metal" data-atomic-number="107" data-symbol="Bh"><span>107</span><h3>Bh</h3><p>بوريوم</p></div>
+                <div class="element transition-metal" data-atomic-number="108" data-symbol="Hs"><span>108</span><h3>Hs</h3><p>هاسيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="109" data-symbol="Mt"><span>109</span><h3>Mt</h3><p>مايتنيريوم</p></div>
+                <div class="element transition-metal" data-atomic-number="110" data-symbol="Ds"><span>110</span><h3>Ds</h3><p>درمشتاتيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="111" data-symbol="Rg"><span>111</span><h3>Rg</h3><p>رونتجينيوم</p></div>
+                <div class="element transition-metal" data-atomic-number="112" data-symbol="Cn"><span>112</span><h3>Cn</h3><p>كوبرنيسيوم</p></div>
+                <div class="element post-transition-metal" data-atomic-number="113" data-symbol="Nh"><span>113</span><h3>Nh</h3><p>نيهونيوم</p></div>
+                <div class="element post-transition-metal" data-atomic-number="114" data-symbol="Fl"><span>114</span><h3>Fl</h3><p>فليروفيوم</p></div>
+                <div class="element post-transition-metal" data-atomic-number="115" data-symbol="Mc"><span>115</span><h3>Mc</h3><p>موسكوفيوم</p></div>
+                <div class="element post-transition-metal" data-atomic-number="116" data-symbol="Lv"><span>116</span><h3>Lv</h3><p>ليفرموريوم</p></div>
+                <div class="element halogen" data-atomic-number="117" data-symbol="Ts"><span>117</span><h3>Ts</h3><p>تنيسين</p></div>
+                <div class="element noble-gas" data-atomic-number="118" data-symbol="Og"><span>118</span><h3>Og</h3><p>أوغانيسون</p></div>
+                
+                <div class="empty empty-span-2"></div> <div class="element lanthanide" data-atomic-number="57" data-symbol="La"><span>57</span><h3>La</h3><p>لانثانوم</p></div>
+                <div class="element lanthanide" data-atomic-number="58" data-symbol="Ce"><span>58</span><h3>Ce</h3><p>سيريوم</p></div>
+                <div class="element lanthanide" data-atomic-number="59" data-symbol="Pr"><span>59</span><h3>Pr</h3><p>براسيوديميوم</p></div>
+                <div class="element lanthanide" data-atomic-number="60" data-symbol="Nd"><span>60</span><h3>Nd</h3><p>نيوديميوم</p></div>
+                <div class="element lanthanide" data-atomic-number="61" data-symbol="Pm"><span>61</span><h3>Pm</h3><p>بروميثيوم</p></div>
+                <div class="element lanthanide" data-atomic-number="62" data-symbol="Sm"><span>62</span><h3>Sm</h3><p>ساماريوم</p></div>
+                <div class="element lanthanide" data-atomic-number="63" data-symbol="Eu"><span>63</span><h3>Eu</h3><p>يوروبيوم</p></div>
+                <div class="element lanthanide" data-atomic-number="64" data-symbol="Gd"><span>64</span><h3>Gd</h3><p>غادولينيوم</p></div>
+                <div class="element lanthanide" data-atomic-number="65" data-symbol="Tb"><span>65</span><h3>Tb</h3><p>تيربيوم</p></div>
+                <div class="element lanthanide" data-atomic-number="66" data-symbol="Dy"><span>66</span><h3>Dy</h3><p>ديسبروسيوم</p></div>
+                <div class="element lanthanide" data-atomic-number="67" data-symbol="Ho"><span>67</span><h3>Ho</h3><p>هولميوم</p></div>
+                <div class="element lanthanide" data-atomic-number="68" data-symbol="Er"><span>68</span><h3>Er</h3><p>إربيوم</p></div>
+                <div class="element lanthanide" data-atomic-number="69" data-symbol="Tm"><span>69</span><h3>Tm</h3><p>ثوليوم</p></div>
+                <div class="element lanthanide" data-atomic-number="70" data-symbol="Yb"><span>70</span><h3>Yb</h3><p>إيتربيوم</p></div>
+                <div class="element lanthanide" data-atomic-number="71" data-symbol="Lu"><span>71</span><h3>Lu</h3><p>لوتيتيوم</p></div>
+                <div class="empty empty-span-1"></div>
+
+                <div class="empty empty-span-2"></div>
+                <div class="element actinide" data-atomic-number="89" data-symbol="Ac"><span>89</span><h3>Ac</h3><p>أكتينيوم</p></div>
+                <div class="element actinide" data-atomic-number="90" data-symbol="Th"><span>90</span><h3>Th</h3><p>ثوريوم</p></div>
+                <div class="element actinide" data-atomic-number="91" data-symbol="Pa"><span>91</span><h3>Pa</h3><p>بروتكتينيوم</p></div>
+                <div class="element actinide" data-atomic-number="92" data-symbol="U"><span>92</span><h3>U</h3><p>يورانيوم</p></div>
+                <div class="element actinide" data-atomic-number="93" data-symbol="Np"><span>93</span><h3>Np</h3><p>نبتونيوم</p></div>
+                <div class="element actinide" data-atomic-number="94" data-symbol="Pu"><span>94</span><h3>Pu</h3><p>بلوتونيوم</p></div>
+                <div class="element actinide" data-atomic-number="95" data-symbol="Am"><span>95</span><h3>Am</h3><p>أمريسيوم</p></div>
+                <div class="element actinide" data-atomic-number="96" data-symbol="Cm"><span>96</span><h3>Cm</h3><p>كوريوم</p></div>
+                <div class="element actinide" data-atomic-number="97" data-symbol="Bk"><span>97</span><h3>Bk</h3><p>بركيليوم</p></div>
+                <div class="element actinide" data-atomic-number="98" data-symbol="Cf"><span>98</span><h3>Cf</h3><p>كاليفورنيوم</p></div>
+                <div class="element actinide" data-atomic-number="99" data-symbol="Es"><span>99</span><h3>Es</h3><p>أينشتاينيوم</p></div>
+                <div class="element actinide" data-atomic-number="100" data-symbol="Fm"><span>100</span><h3>Fm</h3><p>فرميوم</p></div>
+                <div class="element actinide" data-atomic-number="101" data-symbol="Md"><span>101</span><h3>Md</h3><p>مندليفيوم</p></div>
+                <div class="element actinide" data-atomic-number="102" data-symbol="No"><span>102</span><h3>No</h3><p>نوبليوم</p></div>
+                <div class="element actinide" data-atomic-number="103" data-symbol="Lr"><span>103</span><h3>Lr</h3><p>لورنسيوم</p></div>
+            </div>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
